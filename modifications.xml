@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<id>xPandax:Simple_Youtube_Video_Embedder_BBC</id>
+	<version>2.0</version>
+
+	<file name="$sourcedir/Post.php">
+		<operation>
+			<search position="after"><![CDATA[<img>]]></search>
+			<add><![CDATA[<object><embed><iframe>]]></add>
+		</operation>
+
+		<operation>
+			<search position="after"><![CDATA[<img>]]></search>
+			<add><![CDATA[<object><embed><iframe>]]></add>
+		</operation>
+	</file>
+
+	<file name="$sourcedir/Subs.php">
+		<operation>
+			<search position="after"><![CDATA[
+						// Only do this if the preg survives.
+						if (is_string($result = preg_replace(array(]]></search>
+
+			<add><![CDATA[
+						/* Simple Youtube Video Embedder/BBC - Check for youtube links */
+						if (strpos($data, 'youtube.com') !== false || strpos($data, 'youtu.be') !== false) {
+							global $sourcedir;
+							@include_once($sourcedir . '/Subs-SimpleYoutubeEmbed.php');
+							if (function_exists('SYTE_CheckYoutubeLink'))
+								$data = SYTE_CheckYoutubeLink($data);
+						}
+						]]></add>
+		</operation>
+	</file>
+</modification>

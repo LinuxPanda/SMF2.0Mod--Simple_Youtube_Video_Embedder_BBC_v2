@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+
+	<id>xPandax:Simple_Youtube_Video_Embedder_BBC</id>
+	<name>Simple Youtube Video Embedder/BBC</name>
+	<version>2.0</version>
+	<type>modification</type>
+
+	<install for="2.0 - 2.0.99">
+		<readme parsebbc="true">readme.txt</readme>
+		<code>hooks.php</code>
+		<modification>modifications.xml</modification>
+		<require-file name="core/SimpleYoutubeEmbed.php" destination="$sourcedir" />
+	</install>
+
+	<uninstall for="2.0 - 2.0.99">
+		<code>hooks.php</code>
+		<modification reverse="true">modifications.xml</modification>
+		<remove-file name="$sourcedir/SimpleYoutubeEmbed.php" />
+	</uninstall>
+</package-info>
