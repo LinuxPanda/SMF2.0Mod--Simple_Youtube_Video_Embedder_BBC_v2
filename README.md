@@ -6,8 +6,8 @@ Since youtube video links are automatically parsed & displayed, there is no need
 
 In addition to these features, this mod supports the following format also which was used by some old mods.
 
-[youtube]yVpbFMhOAwE[/youtube]
-[yt]yVpbFMhOAwE[/yt]
+* [youtube]yVpbFMhOAwE[/youtube]
+* [yt]yVpbFMhOAwE[/yt]
 
 > This is a "modification package" for Simple Machines Forum 2.0.x
 
